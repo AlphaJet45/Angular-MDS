@@ -1,0 +1,14 @@
+<table>
+  <tr>
+    <th>Nom</th>
+    <th>Description</th>
+    <th>Prix</th>
+    <th>Action</th>
+  </tr>
+  <tr *ngFor="let product of products; let i = index">
+    <td>{{ product.name | uppercase }}</td> 
+    <td>{{ product.description | lowercase | slice:0:20 }}</td>
+    <td>{{ product.cost | number }}</td>
+    <td><button type="button" (click)="deleteElmt(i)"><i class="material-icons">delete_outline</i></button></td>
+  </tr>
+</table>
